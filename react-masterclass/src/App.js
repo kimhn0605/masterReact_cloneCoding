@@ -12,12 +12,15 @@ to {
 
 const Box = styled.div`
 	display: flex;
+	height: 100vh;
+	width: 100vw;
 	justify-content: center;
 	align-items: center;
-	background-color: beige;
-	animation: ${anim} 15s infinite;
+	background-color: ${(props) => props.theme.backgroundColor};
+	color: ${(props) => props.theme.textColor};
+	// animation: ${anim} 15s infinite;
 	&:hover {
-		background-color: black;
+		background-color: gray;
 	}
 `;
 
@@ -36,6 +39,7 @@ const Circle = styled(Btn)`
 function App() {
 	return (
 		<Box>
+			<h1>Theme</h1>
 			<Btn>Hello</Btn>
 			<Circle>ReactJS</Circle>
 		</Box>
